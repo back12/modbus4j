@@ -60,6 +60,7 @@ public class StreamTransport implements Transport, Runnable {
      * <p>run.</p>
      */
     public void run() {
+        if (listener == null) return;
         listener.run();
     }
 
@@ -72,6 +73,7 @@ public class StreamTransport implements Transport, Runnable {
      * <p>removeConsumer.</p>
      */
     public void removeConsumer() {
+        if (listener == null) return;
         listener.stop();
         listener = null;
     }
